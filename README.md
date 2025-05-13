@@ -1,2 +1,0 @@
-# lordkon.github.io
-CCAS
