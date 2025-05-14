@@ -6,6 +6,8 @@
     <title>CCAS - Anti-Money Laundering Certification in Crypto</title>
     <!-- Import Google Fonts (Poppins) -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Import Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         /* Reset default styles */
         * {
@@ -17,14 +19,46 @@
 
         /* Body styling */
         body {
-            background-color: #f4f4f4;
+            background-color: #f8f9fa;
             color: #333;
             line-height: 1.6;
         }
 
+        /* Navigation bar styling */
+        nav {
+            background-color: #003087; /* Dark blue inspired by ACAMS */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 15px 0;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #f5c518; /* Gold accent on hover */
+        }
+
         /* Header styling */
         header {
-            background: linear-gradient(135deg, #b71c1c, #d32f2f); /* Gradient background */
+            background: linear-gradient(135deg, #003087, #0056d2); /* Blue gradient inspired by ACAMS */
             color: white;
             text-align: center;
             padding: 30px 0;
@@ -43,29 +77,64 @@
             clip-path: inset(10% 10% 10% 10%); /* Crop 10% from all sides */
         }
 
+        /* Hero section styling */
+        .hero {
+            background-color: #e9ecef;
+            text-align: center;
+            padding: 50px 20px;
+            margin-bottom: 40px;
+        }
+
+        .hero h2 {
+            font-size: 2.5em;
+            color: #003087;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .hero .cta-button {
+            background-color: #f5c518; /* Gold CTA button */
+            color: #003087;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.2em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero .cta-button:hover {
+            background-color: #e0b000;
+        }
+
         /* Main content styling */
         main {
-            max-width: 900px;
+            max-width: 1100px; /* Wider content area like ACAMS */
             margin: 40px auto;
             padding: 0 20px;
         }
 
         section {
             background-color: white;
-            padding: 30px; /* Increased padding for better spacing */
-            margin-bottom: 30px;
+            padding: 40px;
+            margin-bottom: 40px;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         section:hover {
-            transform: scale(1.02); /* Slight scale on hover */
+            transform: scale(1.02);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
         section h2 {
-            color: #d32f2f;
+            color: #003087;
             margin-bottom: 20px;
             font-size: 2em;
             font-weight: 600;
@@ -78,8 +147,48 @@
         }
 
         section ul {
-            list-style-type: disc;
-            padding-left: 25px;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        section ul li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        section ul li::before {
+            content: "\f058"; /* Font Awesome check-circle icon */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #003087;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* Testimonials section */
+        .testimonials {
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            margin-bottom: 30px;
+        }
+
+        .testimonial {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .testimonial span {
+            display: block;
+            font-style: normal;
+            font-weight: 600;
+            color: #003087;
+            margin-top: 10px;
         }
 
         /* Form styling */
@@ -91,6 +200,7 @@
 
         form label {
             font-weight: 600;
+            color: #003087;
         }
 
         form input, form textarea {
@@ -102,12 +212,12 @@
         }
 
         form input:focus, form textarea:focus {
-            border-color: #d32f2f;
+            border-color: #003087;
             outline: none;
         }
 
         form button {
-            background-color: #d32f2f;
+            background-color: #003087;
             color: white;
             padding: 12px;
             border: none;
@@ -119,35 +229,66 @@
         }
 
         form button:hover {
-            background-color: #b71c1c;
-            box-shadow: 0 0 10px rgba(211, 47, 47, 0.5); /* Glow effect on hover */
+            background-color: #0056d2;
+            box-shadow: 0 0 10px rgba(0, 48, 135, 0.5);
         }
 
         /* Footer styling */
         footer {
             text-align: center;
-            padding: 25px;
-            background-color: #333;
+            padding: 40px;
+            background-color: #003087;
             color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
         }
 
         footer p {
             font-size: 0.9em;
             font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        footer .cta-button {
+            background-color: #f5c518;
+            color: #003087;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        footer .cta-button:hover {
+            background-color: #e0b000;
         }
 
         /* Responsive design */
         @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                padding: 10px 0;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
             header h1 {
                 font-size: 2em;
             }
 
             header img {
-                width: 300px; /* Adjusted for mobile */
-                clip-path: inset(10% 10% 10% 10%); /* Maintain cropping on mobile */
+                width: 300px;
+                clip-path: inset(10% 10% 10% 10%);
+            }
+
+            .hero h2 {
+                font-size: 1.8em;
+            }
+
+            .hero p {
+                font-size: 1em;
             }
 
             section h2 {
@@ -161,11 +302,28 @@
     </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#introduction">Home</a></li>
+            <li><a href="#course-details">About</a></li>
+            <li><a href="#benefits">Certification</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
     <!-- Header Section -->
     <header>
         <h1>Certified Cryptoasset Anti-Financial Crime Specialist (CCAS)</h1>
-        <img src="https://i.imgur.com/kakUoVl.jpeg" alt="CCAS Logo">
+        <img src="https://i.imgur.com/abc123.jpg" alt="CCAS Logo">
     </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Become a Leader in Crypto Compliance</h2>
+        <p>Earn your CCAS certification and combat financial crime in the cryptocurrency space.</p>
+        <a href="#contact" class="cta-button">Get Certified Today</a>
+    </section>
 
     <!-- Main Content -->
     <main>
@@ -206,13 +364,26 @@
             </ul>
         </section>
 
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <h2>What Our Graduates Say</h2>
+            <div class="testimonial">
+                "The CCAS certification gave me the tools to excel in crypto compliance. Highly recommended!"<br>
+                <span>— Jane Doe, Compliance Officer</span>
+            </div>
+            <div class="testimonial">
+                "A must-have for anyone in the crypto space. The course is practical and up-to-date."<br>
+                <span>— John Smith, Financial Analyst</span>
+            </div>
+        </section>
+
         <!-- Contact Section -->
         <section id="contact">
             <h2>Contact Us</h2>
             <p>
                 Have questions or want to learn more about the CCAS certification? Reach out to us using the form below.
             </p>
-            <form>
+            <form action="https://formspree.io/f/your-form-id" method="POST">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
 
@@ -230,6 +401,7 @@
     <!-- Footer Section -->
     <footer>
         <p>© 2025 CCAS Certification. All rights reserved.</p>
+        <a href="#contact" class="cta-button">Register Now</a>
     </footer>
 </body>
 </html>
